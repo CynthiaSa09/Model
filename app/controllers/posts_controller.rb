@@ -9,6 +9,10 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    respond_to do |format|
+      format.js { render layout: false }
+      format.html { render :show }
+    end
   end
 
   # GET /posts/new
